@@ -1,0 +1,178 @@
+// mailing-address
+//
+//
+
+.b-mailing-address {
+    width: 385px;
+    &:extend(.box);
+    position: absolute;
+    left: 308px;
+    top: 4px;
+    z-index: 2;
+
+    h2 {
+        font-size: 2.4rem;
+        line-height: 18px;
+        color: black;
+        padding-left: 20px;
+        margin: 20px 0 16px;
+    }
+
+    .b-table {
+        display: table;
+        width: 100%;
+        border-bottom: 1px solid #e7e7e6;
+        padding: 10px 0 14px;
+
+        &__tr {
+            display: table-row;
+
+            &.heading {
+
+                &:hover {
+                    background: none !important;
+
+                    .b-table__td:last-child {
+                        &::after {
+                            display: none !important;
+                        }
+                    }
+                }
+            }
+
+            &.border {
+                .b-table__td {
+                    border-top: 17px solid white;
+                }
+            }
+
+            &:not(.postcode):hover {
+                background-color: #edf7ff;
+
+                .b-table__td:last-child {
+                    &::after {
+                        font-family: 'icomoon';
+                        content: "\e809";
+                        font-size: 1.1rem;
+                        position: absolute;
+                        cursor: pointer;
+                        right: 12px;
+                        top: 2px;
+                        font-weight: @bold;
+                        color: @error-color;
+                    }
+                }
+            }
+
+            &:nth-child(1) {
+
+                .b-table__td {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .b-table__td:nth-child(1) {
+                padding-left: 20px;
+            }
+
+            .b-table__td:last-child {
+                padding-right: 50px;
+            }
+        }
+
+        &__td {
+            display: table-cell;
+            position: relative;
+            text-align: right;
+
+            &:nth-child(1), &:nth-child(2) {
+                text-align: left;
+            }
+
+            &:nth-child(1) {
+                width: 159px;
+            }
+
+            .index {
+                font-size: 1rem;
+            }
+
+            .address {
+                font-size: 1.2rem;
+            }
+
+            .price {
+                color: #b2b2b2;
+                display: inline;
+                font-size: 1.2rem;
+                margin-right: -12px;
+            }
+
+            .report {
+                font-size: 1.4rem;
+            }
+
+            .cost, &.vat {
+                font-size: 1.2rem;
+            }
+
+            .total {
+                font-size: 1.6rem;
+            }
+
+            .price-all {
+                font-size: 1.6rem;
+            }
+
+            .report-all {
+                font-size: 1.6rem;
+
+                span {
+                    color: #b2b2b2;
+                    margin-right: -22px;
+                }
+            }
+
+            .total-all {
+                font-size: 2.4rem;
+
+                span {
+                    color: #b2b2b2;
+                    margin-right: -22px;
+                }
+            }
+
+            span {
+                font-size: 1.6rem;
+            }
+        }
+
+        & + .b-table {
+
+            .b-table__tr {
+
+                &:hover {
+                    background: none !important;
+
+                    .b-table__td:last-child {
+                        &::after {
+                            display: none !important;
+                        }
+                    }
+                }
+
+                .b-table__td {
+                    vertical-align: bottom;
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: 1.4rem;
+        color: #787878;
+        padding: 12px 20px;
+        margin-bottom: 0;
+    }
+}
+

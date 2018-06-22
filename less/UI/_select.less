@@ -1,0 +1,342 @@
+//
+// Select
+// --------------------------------------------------
+
+.b-subscription-period {
+    position: relative;
+    margin-bottom: 1.4rem;
+    z-index: 3;
+
+    &--focus {
+        .b-choose-periods {
+            border: 1px @link solid !important;
+        }
+    }
+
+    .b-choose-periods {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        min-height: 42px;
+        border: 1px @input-border-color solid;
+        padding: 4px;
+        padding-bottom: 0;
+        cursor: pointer;
+        .transition(all 0.25s);
+
+        &:hover {
+            border-color: @input-border-hover;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 4px;
+            right: 0;
+            width: 100px;
+            height: 32px;
+            background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9Ijg4JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+            background-size: 100%;
+            background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(88%, #ffffff));
+            background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 88%);
+            background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 88%);
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 88%);
+            z-index: 2;
+        }
+
+        &::after {
+            font-family: 'icomoon';
+            content: "\e806";
+            font-size: .6rem;
+            position: absolute;
+            top: 7px;
+            right: 14px;
+            z-index: 2;
+            color: #0055a6;
+            cursor: pointer;
+        }
+
+        .wrapper-periods {
+            width: 95%;
+        }
+
+        &__period {
+            float: left;
+            height: 32px;
+            font-size: 1.4rem;
+            line-height: 3.2rem;
+            color: #fff;
+            background-color: #0055a6;
+            border-radius: 4px;
+            text-align: center;
+            padding: 0 30px 0 12px;
+            margin-right: 4px;
+            position: relative;
+            margin-bottom: 4px;
+            &:after {
+                content: "×";
+                position: absolute;
+                color: white;
+                right: 10px;
+                top: 0;
+            }
+        }
+    }
+
+    .b-dropdown {
+        display: none;
+        float: left;
+        width: 574px;
+        position: absolute;
+        background-color: white;
+        z-index: 2;
+        .box-shadow(0 10px 20px 0px #AEB0B2);
+        padding: 26px 29px 0 24px;
+
+        .b-wrapper-years {
+            overflow: hidden;
+            margin-bottom: 22px;
+
+            &__year {
+                color: #333;
+                margin-bottom: 12px;
+            }
+
+            &__month {
+                float: left;
+                width: 40px;
+                height: 32px;
+                border: 1px solid #e5e5e5;
+                font-size: 1.4rem;
+                line-height: 3.2rem;
+                color: #0055a6;
+                border-radius: 4px;
+                text-align: center;
+                cursor: pointer;
+
+                &--not-active {
+                    border: none;
+                    color: #b6b6b6;
+                    cursor: default;
+                }
+
+                &:not(:last-of-type) {
+                    margin-right: 3px;
+                }
+
+                &:hover {
+                    border-color: #0e4194;
+                }
+
+                &.active {
+                    border: 2px solid #0e4194;
+                    line-height: 3rem;
+                }
+            }
+
+            &__half {
+                border: 1px solid #e5e5e5;
+                border-radius: 4px;
+                float: left;
+                padding: 0 16px;
+                cursor: pointer;
+
+                .b-wrapper-years__month {
+                    border: none;
+                    width: 35px;
+                    height: 30px;
+                    line-height: 3rem;
+                }
+
+                &:hover {
+                    border-color: #0e4194;
+                }
+
+                &.active {
+                    border: 2px solid #0e4194;
+
+                    .b-wrapper-years__month {
+                        height: 28px;
+                        line-height: 2.8rem;
+                        position: relative;
+                        left: -1px;
+                    }
+                }
+            }
+
+            &__twoMonth {
+                border: 1px solid #e5e5e5;
+                border-radius: 4px;
+                overflow: hidden;
+                float: left;
+
+                .b-wrapper-years__month {
+                    border: none;
+                    height: 30px;
+                    width: 82px;
+                    line-height: 3rem;
+                }
+
+                &:not(:last-of-type) {
+                    margin-right: 3px;
+                }
+
+                &:hover {
+                    border-color: #0e4194;
+                }
+
+                &.active {
+                    border: 2px solid #0e4194;
+                    width: 84px;
+
+                    .b-wrapper-years__month {
+                        height: 28px;
+                        line-height: 2.8rem;
+                        position: relative;
+                        left: -1px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.b-custom-select {
+    position: relative;
+    margin-bottom: 1.4rem;
+    cursor: pointer;
+
+    &--focus input {
+        border-color: @link !important;
+    }
+
+    &:hover input {
+        border-color: @input-border-hover;
+    }
+
+    &__value {
+        position: absolute;
+        left: 10px;
+        top: 0;
+        right: 0;
+        height: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        line-height: 4rem;
+        z-index: 2;
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            right: 40px;
+            top: 6px;
+            bottom: 6px;
+            background: white;
+            z-index: -1;
+        }
+    }
+
+    .icon-Dropdown2 {
+        font-size: .6rem;
+        position: absolute;
+        top: 17px;
+        right: 14px;
+        z-index: 1;
+        color: #0055a6;
+        cursor: pointer;
+    }
+
+    &__suggest-wrapper {
+        display: none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        border: 1px solid #cccccc;
+        border-top-width: 0;
+        background: white;
+        .box-shadow(0 10px 20px 0px #AEB0B2);
+        .transition(none);
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    &__suggest {
+        overflow-y: scroll;
+        height: inherit;
+        padding: 0 20px 0 0;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: content-box;
+        width: 100%;
+
+        &__element {
+            padding: 6px 9px 7px;
+            background: white;
+            cursor: pointer;
+            .transition(background-color 0.1s ease-in-out);
+            display: block;
+            line-height: 22px;
+
+            &:hover {
+                background-color: #EDF7FF;
+            }
+
+            &--selected {
+                background-color: #EDF7FF;
+            }
+        }
+    }
+
+    input {
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+}
+
+.b-custom-address {
+    position: relative;
+    margin-bottom: 1.4rem;
+
+    &--error {
+        input {
+            border-color: @error-color !important;
+        }
+
+        .hint {
+            clear: left;
+            color: @error-color;;
+        }
+    }
+
+    &--warning {
+        .hint {
+            clear: left;
+            color: @warning-color;
+        }
+    }
+
+    input {
+
+        margin-bottom: 0;
+        cursor: pointer;
+        padding-left: 7px 9px !important;
+    }
+
+    &::after {
+        font-family: 'icomoon';
+        content: "\e807";
+        font-size: 1.6rem;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        z-index: 1;
+        color: #0055a6;
+        width: 41px;
+        height: 38px;
+        text-align: center;
+        line-height: 38px;
+    }
+}

@@ -1,0 +1,228 @@
+extends layout
+block head
+	- var title = "directmail_tut_6"
+	include ../includes/_head
+
+block img
+	img(src="/images/directmail_tut6.jpg" alt="" style="left: 0; opacity: 0.5; position: absolute; top: 0; z-index: 9999; display: none;")
+
+append pins
+	// overlay-tut1
+	.b-overlay-tut.b-overlay-tut--1
+	// /overlay-tut1
+
+append program-choice
+	// mailing-address
+	.b-mailing-address
+		h2 Адреса рассылки
+		.b-table
+			.b-table__tr.heading
+				.b-table__td
+				.b-table__td Дом
+				.b-table__td Ящиков
+				.b-table__td Стоимость
+					span.price , &#8381;
+
+			.b-table__tr.postcode
+				.b-table__td
+					.index 191186
+
+
+			.b-table__tr
+				.b-table__td
+
+					.address наб. Дворцовая
+				.b-table__td
+					span 36
+
+				.b-table__td
+					span 1
+
+				.b-table__td
+					span 4
+
+			.b-table__tr
+				.b-table__td
+				.b-table__td
+					span 37
+
+				.b-table__td
+					span 37
+
+				.b-table__td
+					span 144
+
+			.b-table__tr
+				.b-table__td
+				.b-table__td
+					span 39к1
+
+				.b-table__td
+					span 50
+
+				.b-table__td
+					span 200
+
+			.b-table__tr.border
+				.b-table__td
+					.address ул. Жуковского
+				.b-table__td
+					span 2
+
+				.b-table__td
+					span 1
+
+				.b-table__td
+					span 4
+
+			.b-table__tr
+				.b-table__td
+				.b-table__td
+					span 1
+
+				.b-table__td
+					span 1
+
+				.b-table__td
+					span 4
+
+			.b-table__tr
+				.b-table__td
+				.b-table__td
+					span 4
+
+				.b-table__td
+					span 4
+
+				.b-table__td
+					span 400
+
+			.b-table__tr.border.postcode
+				.b-table__td
+					.index 191184
+
+
+			.b-table__tr
+				.b-table__td
+					.address Невский пр-т
+				.b-table__td
+					span 24
+
+				.b-table__td
+					span 20
+
+				.b-table__td
+					span 80
+
+			.b-table__tr
+				.b-table__td
+
+				.b-table__td
+					span 26
+
+				.b-table__td
+					span 20
+
+				.b-table__td
+					span 120
+
+			.b-table__tr.border.postcode
+				.b-table__td
+					.index 191184
+				.b-table__td
+				.b-table__td
+				.b-table__td
+
+			.b-table__tr
+				.b-table__td
+					.address ул. Восстания
+				.b-table__td
+					span 2
+
+				.b-table__td
+					span 30
+
+				.b-table__td
+					span 120
+
+
+			.b-table__tr
+				.b-table__td
+
+				.b-table__td
+					span 2к4
+
+				.b-table__td
+					span 30
+
+				.b-table__td
+					span 120
+
+
+		.b-table
+			.b-table__tr
+				.b-table__td
+					a.report(href="#") Отчёт в .xlsx
+				.b-table__td
+					.cost Стоимость
+					.vat ндс
+					.total Итог
+				.b-table__td
+					.price-all 1096
+					.report-all 199
+						span ,30
+					.total-all 1295
+						span ,30
+
+		p Стоимость рассчитывается примерно.
+			br
+			| Конечную стоимость вам сообщит менеджер.
+	// /mailing-address
+
+	// box-popup
+	.box-popup.b-address-list
+		.skip
+			a(href="#") Пропустить обучение
+			i.icon-region_pop_close
+
+		h2 Список адресов
+		p Список позволяет удалять дома,
+			=" "
+			br
+			| по одному. Его можно скачать
+			=" "
+			br
+			| или отправить как заявку
+			=" "
+			br
+			| нашему менеджеру.
+
+		.btn.btn__primary Дальше
+
+		.prev
+			i.icon-back
+			a(href="#") Список адресов
+
+		.dots
+			.dot.active
+				span
+			.dot
+				span
+			.dot
+				span
+			.dot
+				span
+			.dot
+				span
+			.dot
+				span
+			.dot
+				span
+
+		.next
+			a(href="#") Удаление списка
+			i.icon-More
+	// /box-popup
+
+
+

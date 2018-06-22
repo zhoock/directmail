@@ -1,0 +1,207 @@
+// directmail-tut1
+//
+//
+
+.box-popup {
+    background: white;
+//    .box-shadow (0 1px 3px rgba(0, 0, 0, 0.3));
+    .box-shadow (0 32px 104px rgba(0, 0, 0, 0.5));
+    width: 451px;
+    height: 295px;
+    position: absolute;
+    padding: 50px 23px;
+    z-index: 1;
+    text-align: center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 53px;
+        left: -25px;
+        border: 13px solid transparent;
+        border-right-color: white;
+    }
+
+    .skip {
+        position: absolute;
+        top: 4px;
+        right: 14px;
+        font-size: 1.4rem;
+
+        i.icon-region_pop_close {
+            position: relative;
+            bottom: 0;
+            right: -4px;
+            color: @link;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        margin-bottom: 7px;
+    }
+
+    p {
+        font-size: 1.8rem;
+        color: #808080;
+        margin-bottom: 21px;
+    }
+
+    .btn {
+        min-width: 110px;
+        padding: 8px 0;
+    }
+
+    .dots {
+        position: absolute;
+        bottom: 19px;
+        left: 50%;
+        .translate(-50%);
+
+        .dot {
+            float: left;
+
+            &:not(:last-child) {
+                margin-right: 7px;
+            }
+
+            &.active {
+                margin-top: -1px;
+
+                span {
+                    background: none;
+                    border: 1px solid @link;
+                    box-sizing: content-box;
+                }
+            }
+
+            span {
+                width: 8px;
+                height: 8px;
+                background: @link;
+                border-radius: 50%;
+                display: block;
+            }
+        }
+    }
+
+    .prev {
+        position: absolute;
+        bottom: 13px;
+        left: 20px;
+        font-size: 1.4rem;
+
+        i.icon-back {
+            position: relative;
+            bottom: 0;
+            right: 5px;
+            color: @link;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    }
+
+    .next {
+        position: absolute;
+        bottom: 13px;
+        right: 17px;
+        font-size: 1.4rem;
+
+        i.icon-More {
+            position: relative;
+            bottom: 0;
+            right: -4px;
+            color: @link;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.b-overlay-tut {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    &--1 {
+        background: url(/images/overlay-tut1.png) repeat;
+    }
+
+    &--2 {
+        background: url(/images/overlay-tut2.png) repeat;
+    }
+
+    &--3 {
+        background: url(/images/overlay-tut3.png) repeat;
+    }
+}
+
+.b-materials-mailing {
+    left: 183px;
+    top: -51px;
+}
+
+.b-selection-of-homes {
+    top: 175px;
+    left: 710px;
+    position: fixed;
+}
+
+.b-group-of-houses {
+    left: 107px;
+    top: -50px;
+}
+
+.b-selection-radius {
+    top: 423px;
+    left: 583px;
+    height: 328px;
+    position: fixed;
+
+    &::before {
+        content: "";
+        top: -26px;
+        left: 50%;
+        margin-left: -13px;
+        border: 13px solid transparent;
+        border-bottom-color: white;
+    }
+}
+
+.b-show-all-addresses {
+    left: 180px;
+    top: -124px;
+
+    &::before {
+        top: 126px;
+    }
+}
+
+.b-address-list {
+    left: 710px;
+    top: 359px;
+    z-index: 2;
+}
+
+.b-remove-the-list {
+    left: 103px;
+    top: -144px;
+
+    &::before {
+        top: 147px;
+    }
+
+    .btn {
+        min-width: 190px;
+    }
+}
+

@@ -1,0 +1,53 @@
+extends layout
+
+block head
+	- var title = "directmail_tut_2"
+	include ../includes/_head
+
+block img
+	img(src="/images/directmail_tut2.jpg" alt="" style="left: 0; opacity: 0.5; position: absolute; top: 0; z-index: 9999; display: none;")
+
+append pins
+	// overlay-tut2
+	.b-overlay-tut.b-overlay-tut--2
+	// /overlay-tut2
+
+	.box-popup.b-selection-of-homes
+		.skip
+			a(href="#") Пропустить обучение
+			i.icon-region_pop_close
+
+		h2 Выбор дома на карте
+		p Кликните мышкой на номер любого
+			br
+			=" "
+			| дома, который хотите выбрать. Чтобы
+			br
+			=" "
+			| снять выбор, нажмите еще раз.
+
+		.btn.btn__primary Дальше
+
+		.prev
+			i.icon-back
+			a(href="#") Выбор материалов
+
+		.dots
+			.dot
+				span
+			.dot.active
+				span
+			.dot
+				span
+			.dot
+				span
+			.dot
+				span
+			.dot
+				span
+			.dot
+				span
+
+		.next
+			a(href="#") Выбор группы домов
+			i.icon-More

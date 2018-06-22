@@ -1,0 +1,344 @@
+// directmail
+//
+//
+
+.box {
+    background: white;
+    margin-bottom: 3px;
+    .box-shadow (0 1px 3px rgba(0, 0, 0, 0.3));
+//    opacity: .95;
+
+}
+
+.b-content {
+    min-width: 1000px;
+
+    .b-map {
+        background: url(/images/directmail_map.jpg) repeat;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .b-program-choice {
+        position: absolute;
+        left: 5px;
+        top: 4px;
+        width: 300px;
+        font-size: 1.4rem;
+        color: #787878;
+
+        &__address {
+            &:extend(.box);
+            padding: 20px 20px 0 21px;
+
+            a.logo {
+                display: block;
+                margin-bottom: 11px;
+            }
+
+            .delivery {
+                margin-bottom: 4px;
+            }
+
+            .leaflets {
+                margin-bottom: 13px;
+
+                &--front {
+                    position: absolute;
+                    z-index: 2;
+                    top: 82px;
+                    background: #fff;
+                    padding: 3px 12px;
+                    left: 8px;
+                    border-radius: 30px;
+                    text-align: center;
+                }
+            }
+
+            form {
+                margin-left: -11px;
+                margin-right: -10px;
+
+                .b-address {
+                    position: relative;
+
+                    &::after {
+                        font-family: 'icomoon';
+                        content: "\e807";
+                        font-size: 1.6rem;
+                        position: absolute;
+                        top: 1px;
+                        right: 31px;
+                        z-index: 1;
+                        color: #0055a6;
+                        width: 41px;
+                        height: 38px;
+                        text-align: center;
+                        line-height: 38px;
+                        cursor: pointer;
+                    }
+
+                    input {
+                        margin-right: -41px;
+                        padding-right: 40px;
+                        height: 42px;
+                        margin-bottom: 9px;
+                    }
+
+                    .btn {
+                        min-width: 32px;
+                        height: 32px;
+                        top: 4px;
+                        position: relative;
+
+                        i.icon-Search {
+                            position: relative;
+                            top: -4px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__house {
+            &:extend(.box);
+            padding: 0;
+
+            ul {
+                margin-bottom: 0;
+            }
+
+            li {
+                &:nth-child(1) {
+                    padding: 12px 20px;
+                }
+
+                & > a {
+                    padding: 9px 20px;
+                    display: block;
+
+                    &:hover {
+                        text-decoration: none;
+                        background-color: #edf7ff;
+                    }
+                }
+
+                &.front {
+                    position: absolute;
+                    z-index: 2;
+                    top: 270px;
+                    background: #fff;
+                    left: 8px;
+                    border-radius: 30px;
+                    text-align: center;
+
+                    & > a {
+                        padding: 3px 12px !important;
+
+                        &:hover {
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__result {
+            &:extend(.box);
+            color: #010101;
+            padding: 27px 19px 35px;
+
+            li {
+                font-size: 2rem;
+                margin-bottom: 6px;
+
+                &.price {
+                    font-size: 3.6rem;
+                    margin: 14px 0 35px;
+                }
+            }
+
+            .btn {
+                margin-bottom: 12px
+            }
+
+            .clean {
+                float: left;
+
+                &--front {
+                    position: absolute;
+                    z-index: 2;
+                    top: 546px;
+                    background: #fff;
+                    padding: 3px 12px;
+                    left: 8px;
+                    border-radius: 30px;
+                    text-align: center;
+                }
+
+                & > a {
+                    color: @error-color;
+                }
+            }
+
+            .show {
+                float: right;
+
+                &--front {
+                    position: absolute;
+                    z-index: 2;
+                    top: 546px;
+                    background: #fff;
+                    padding: 3px 12px;
+                    left: 128px;
+                    border-radius: 30px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .b-account {
+        position: absolute;
+        top: 3px;
+        right: 12px;
+
+        &__question {
+            &:extend(.box);
+            float: right;
+            margin-right: 2px;
+
+            a {
+                padding: 14px 25px 16px;
+                display: block;
+
+                &:hover {
+                    text-decoration: none;
+
+                    span.help {
+                        text-decoration: underline;
+                    }
+
+                    i {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .b-account__question__menu {
+                display: block;
+                position: absolute;
+                left: 41px;
+                top: 46px;
+                width: 128px;
+                &:extend(.box);
+                z-index: 1;
+                padding: 0;
+
+                ul {
+                    margin: 0;
+                    *zoom: 1;
+
+                    &::after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                    }
+
+                    li {
+                        display: block;
+                        width: 100%;
+
+                        span {
+                            font-size: 1.4rem;
+                            display: block;
+                            padding: 4px 15px;
+                            color: @link;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: #edf7ff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__user {
+            &:extend(.box);
+            float: right;
+            padding: 0;
+
+            a {
+                padding: 14px 30px 16px;
+                display: block;
+                text-decoration: none;
+
+                &:hover {
+                    span {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        i {
+            &.icon-Help {
+                position: relative;
+                bottom: -1px;
+                left: -8px;
+                color: @link
+            }
+
+            &.icon-More {
+                position: relative;
+                bottom: 1px;
+                right: -6px;
+                color: @link;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .b-pins {
+        position: absolute;
+        left: 730px;
+        top: 488px;
+
+        .pin {
+            width: 34px;
+            height: 49px;
+            background: transparent url(/images/pin.png) no-repeat;
+            text-align: center;
+            margin-right: 15px;
+            float: left;
+            cursor: pointer;
+            color: white;
+            font-size: 1.4rem;
+            line-height: 34px;
+            position: relative;
+
+            &:hover {
+                i.icon-region_pop_close {
+                    display: block;
+                }
+            }
+
+            i.icon-region_pop_close {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 1rem;
+                width: 34px;
+                height: 49px;
+                line-height: 34px;
+                background: transparent url(/images/pin.png) no-repeat;
+            }
+        }
+    }
+}

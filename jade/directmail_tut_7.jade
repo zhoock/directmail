@@ -1,0 +1,65 @@
+extends layout
+block head
+	- var title = "directmail_tut_7"
+	include ../includes/_head
+
+block img
+	img(src="/images/directmail_tut7.jpg" alt="" style="left: 0; opacity: 0.5; position: absolute; top: 0; z-index: 9999; display: none;")
+
+block program-choice__result
+	.b-program-choice__result
+		ul
+			li 3 отделения
+			li 23 дома
+			li 543 квартиры
+			li.price 2475,30 &#8381;
+
+		.btn.btn__primary.btn--expand Создать заявку
+
+		div.clean
+			a(href="#") Очистить
+		div.clean.clean--front
+			a(href="#") Очистить
+
+			.box-popup.b-remove-the-list
+				.skip
+					a(href="#") Пропустить обучение
+					i.icon-region_pop_close
+				h2 Удаление списка
+				p Нажмите «Очистить», чтобы снять
+					br
+					=" "
+					| выбор со всех домов сразу
+					br
+					=" "
+					| и начать рассчет заново.
+
+				.btn.btn__primary Завершить обучение
+
+				.prev
+					i.icon-back
+					a(href="#") Список адресов
+
+				.dots
+					.dot
+						span
+					.dot
+						span
+					.dot
+						span
+					.dot
+						span
+					.dot
+						span
+					.dot
+						span
+					.dot.active
+						span
+
+		div.show
+			a(href="#") Показать все адреса
+
+append pins
+	// overlay-tut1
+	.b-overlay-tut.b-overlay-tut--1
+	// /overlay-tut1

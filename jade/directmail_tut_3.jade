@@ -1,0 +1,57 @@
+extends layout
+block head
+	- var title = "directmail_tut_3"
+	include ../includes/_head
+
+block img
+	img(src="/images/directmail_tut3.jpg" alt="" style="left: 0; opacity: 0.5; position: absolute; top: 0; z-index: 9999; display: none;")
+
+block program-choice__house
+	.b-program-choice__house
+		ul
+			li Выбор домов
+			li: a(href="#") По одному
+			li: a(href="#") В радиусе
+			li.front: a(href="#") В радиусе
+				.box-popup.b-group-of-houses
+					.skip
+						a(href="#") Пропустить обучение
+						i.icon-region_pop_close
+					h2 Выбор группы домов
+					p Включите режим «В радиусе», чтобы
+						= " "
+						br
+						| иметь возможность выбрать сразу
+						= " "
+						br
+						| несколько домов
+					.btn.btn__primary Дальше
+
+					.prev
+						i.icon-back
+						a(href="#") Выбор дома
+
+					.dots
+						.dot
+							span
+						.dot
+							span
+						.dot.active
+							span
+						.dot
+							span
+						.dot
+							span
+						.dot
+							span
+						.dot
+							span
+
+					.next
+						a(href="#") Выбор радиусом
+						i.icon-More
+
+append pins
+	// overlay-tut1
+	.b-overlay-tut.b-overlay-tut--1
+	// /overlay-tut1

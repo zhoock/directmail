@@ -1,0 +1,62 @@
+extends layout
+
+block head
+	- var title = "directmail_tut_1"
+	include ../includes/_head
+
+block program-choice__address
+
+	.b-program-choice__address
+		a(href="#").logo: img(src="/images/postal-logo.jpg")
+
+		.delivery Рассылка в
+			=" "
+			a(href="#") Санкт-Петербурге
+
+		.leaflets: a(href="#") Листовки меньше А5
+
+		.leaflets.leaflets--front
+			a(href="#") Листовки меньше А5
+			.box-popup.b-materials-mailing
+				.skip
+					a(href="#") Пропустить обучение
+					i.icon-region_pop_close
+
+				h2 Материалы для рассылки
+				p Укажите тип материалов,
+					=" "
+					br
+					| которые хотите рассылать
+
+				.btn.btn__primary Дальше
+
+				.dots
+					.dot.active
+						span
+					.dot
+						span
+					.dot
+						span
+					.dot
+						span
+					.dot
+						span
+					.dot
+						span
+					.dot
+						span
+
+				.next
+					a(href="#") Выбор дома на карте
+					i.icon-More
+
+		form
+			.b-address
+				input(type="text", placeholder="Адрес или название")
+				.btn.btn__primary
+					i.icon-Search
+
+append pins
+	// overlay-tut1
+	.b-overlay-tut.b-overlay-tut--1
+	// /overlay-tut1

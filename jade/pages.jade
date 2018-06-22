@@ -1,0 +1,20 @@
+//- pages.jade
+mixin link(href, name)
+	div
+		| #{name} -
+		=" "
+		a(href=href + ".html", target="_blank") #{href + ".html"}
+
+
+doctype html
+html(lang="ru")
+
+	body
+		+link("directmail_help","directmail_help")
+		+link("directmail_tut_1","directmail_tut_1")
+		+link("directmail_tut_2","directmail_tut_2")
+		+link("directmail_tut_3","directmail_tut_3")
+		+link("directmail_tut_4","directmail_tut_4")
+		+link("directmail_tut_5","directmail_tut_5")
+		+link("directmail_tut_6","directmail_tut_6")
+		+link("directmail_tut_7","directmail_tut_7")

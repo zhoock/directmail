@@ -1,0 +1,353 @@
+//- mixins.jade
+
+
+- var firstHalf = ["Янв", "Фев", "Мар", "Апр", "Май", "Июн"]
+- var secondHalf = ["Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"]
+- var twoMonth = ["Июл Авг", "Сен Окт", "Ноя Дек"]
+- var figures = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+- var cyrilAlphabet = ["А", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Э", "Ю", "Я"]
+- var alphabet = ["Б", "Д", "З", "И", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Э", "Ю"]
+- var latinAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "О", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+- var letterA = ["Автомобили. Мотоциклы", "Архитектура. Интерьер. Дизайн", "Астрология и эзотерика", "Аудио. Видео. Фотодело"]
+- var letterB = ["Безопасность предпринимательства и личности", "Библиотековедение. Журналистика. Полиграфия. Филателия", "Бизнес. Предпринимательство. Менеджмент", "Бухгалтерский учет. Налогообложение", "Военное дело. Силовые структуры"]
+- var letterD = ["Детектив. Фантастика. Приключения. Мистика", "Детские и молодежные издания"]
+- var letterZ = ["Законодательство и право. Юридические науки", "Здравоохранение. Медицина"]
+- var letterI = ["Издания для женщин", "Издания для мужчин", "Издания на иностранных языках", "Издания на языках народов России", "Издания органов государственной власти", "Издания универсального содержания", "Искусство. Культура. Эстетика", "История. Общество. Политика"]
+- var letterK = ["Компьютеры. Информатика. Программные продукты. Радиоэлектроника", "Кроссворды. Сканворды", "Кулинария"]
+- var letterL = ["Литературно-художественные издания"]
+
+mixin categories(letter, categories)
+    article.b-categories__item
+        .b-categories__item__letter= letter
+        .b-categories__item__set
+            each val in categories
+                a(href="#")= val
+
+
+mixin results(together, text)
+    .b-block-magazine
+        a(href="#")
+            figure
+                .left
+                    .b-block-magazine__logs--package
+
+                        if setImg
+                            img(src="/www/images/photo-magazine1.jpg")
+                            img(src="/www/images/photo-magazine1.jpg")
+                            img(src="/www/images/photo-magazine1.jpg")
+                        else
+                            img(src="/www/images/photo-magazine1.jpg")
+
+                .b-block-magazine__together= together
+                figcaption= text
+                .b-description 1 раз в 6 мес.
+                .b-price
+                    .b-price__book от 1670 &#8381;
+
+
+
+mixin cartItem(together, title, period, address, name, addInstance, subscription, price, img)
+    .b-block-magazine&attributes(attributes)
+
+        if restoreSubscription
+            a(href="#").link-restore Восстановить
+
+        else if editionN
+            i.icon-Item_pop_close
+
+            .b-description--popup
+                i.icon-Alert
+                =" "
+                = subscription
+
+        else
+            i.icon-Item_pop_close
+
+        if noInformation
+            .b-block-magazine__cover--popup
+                img(src="/www/images/" + img)
+
+        a(href="#", class={restore: restoreSubscription === "active" || editionN === "active"})
+            figure
+                .b-block-magazine__cover
+                    .b-block-magazine__logs--package
+
+                        if setImg
+                            img(src="/www/images/" + img)
+                            img(src="/www/images/" + img)
+                            img(src="/www/images/" + img)
+                        else
+                            img(src="/www/images/" + img)
+
+                .b-block-magazine__data
+                    .b-block-magazine__together= together
+                    figcaption= title
+                    .b-block-magazine__period= period
+                    .b-description
+
+                        if periodСlosed || editionN
+                            i.icon-Alert
+                            =" "
+                            = subscription
+
+
+                    .b-block-magazine__address= address
+                    .b-block-magazine__name= name
+                    .b-block-magazine__add-instance= addInstance
+
+                    if periodСlosed
+                        .btn.btn__change-period Изменить период
+
+
+
+                    else if editionN
+                        .b-price
+                            .b-price__book
+
+                    else
+                        .b-price
+                            .b-price__book
+                                | от
+                                =" "
+                                =price
+                                =" "
+                                | &#8381;
+
+                    if costChanged
+                        .b-price
+                            .b-price__book
+                                | от
+                                =" "
+                                =price
+                                =" "
+                                | &#8381;
+
+
+
+
+mixin mySubscriptiontsItem(together, title, address, name, subscription, latestNumbers, btnText, orderNumber)
+    .b-block-magazine&attributes(attributes)
+        a(href="#", class={restore: restoreSubscription === "active"})
+            figure
+                .b-block-magazine__cover
+                    .b-block-magazine__logs--package
+
+                        if setImg
+                            img(src="/www/images/photo-magazine1.jpg")
+                            img(src="/www/images/photo-magazine1.jpg")
+                            img(src="/www/images/photo-magazine1.jpg")
+                        else
+                            img(src="/www/images/photo-magazine1.jpg")
+
+                .b-block-magazine__data
+                    .b-block-magazine__together= together
+                    figcaption= title
+                    .b-description= subscription
+                    .b-block-magazine__address= address
+                    .b-block-magazine__name= name
+                    .b-block-magazine__latest-numbers
+                        i.icon-calendar
+                        = latestNumbers
+
+                    .b-block-magazine__order-number= orderNumber
+
+                    if renew
+                        .btn.btn__change-period= btnText
+        if popupSet
+            .b-block-magazine__popup-delivery(style="display: block;")
+                h2 График доставки изданий
+
+                ul
+                    li
+                        img(src="/www/images/photo-magazine1.jpg")
+                    li 3 июля
+                    li 3 августа
+                    li 3 сентября
+                    li 3 октября
+                    li 3 ноября
+
+                    if popupSetPast
+                        li 3 декабря
+
+                    else
+                        li: span 3 декабря
+
+                ul
+                    li
+                        img(src="/www/images/photo-magazine1.jpg")
+                    li 15 июля
+                    li 15 сентября
+
+                    if popupSetPast
+                        li 15 ноября
+                    else
+
+                        li: span 15 ноября
+
+                ul
+                    li
+                        img(src="/www/images/photo-magazine1.jpg")
+                    li 5, 6 июля
+                    li 6, 17 августа
+                    li 6, 18 сентября
+                    li 1, 14 октября
+
+                    if popupSetPast
+                        li 1, 21 ноября
+                        li 3, 16 декабря
+                    else
+                        li 1,
+                            = " "
+                            span 21 ноября
+                        li: span 3, 16 декабря
+
+        else if popupJournal
+            .b-block-magazine__popup-delivery.b-block-magazine__popup-delivery--journal(style="display: block;")
+                h2 График доставки
+
+                .row
+                    .small-7.columns
+                        .text-right
+                            img(src="/www/images/photo-magazine1.jpg")
+                    .small-5.columns
+                        .text-left
+                            ul
+                                li 3 июля
+                                li 3 августа
+                                li 3 сентября
+                                li 3 октября
+                                li 3 ноября
+                                li: span 3 декабря
+
+
+mixin block-magazine()
+    .b-block-magazine(class={elVersion: elVersion === "active"})&attributes(attributes)
+        a(href="#").js-trigger-modal
+            figure
+                if mobile
+                    img.magazine(src="/www/images/photo-magazine1.jpg")
+                    img.tablet(src="/www/images/tablet1.jpg")
+                    figcaption Хозяйство черноземья
+
+                    if newspaper
+                        .b-description Ежедневная газета
+                    else
+                        .b-description
+                            div Журнал с эл. версией
+                            div 1 раз в 6 мес.
+
+                    .b-price
+                        span.b-price__book
+                            i.icon-book
+                            | от 1220 &#8381;
+                        span.b-price__mobile
+                            i.icon-mobile
+                            | от 1220 &#8381;
+
+                else if publishingHouse
+                    .text-center
+                        .publishingHouse издательство
+                        img.magazine(src="/www/images/photo-magazine4.jpg")
+                        figcaption Аргументы и факты
+
+                else if bigRed
+                    .text-center
+                        .b-block-magazine__together издательство
+                        img(src="/www/images/publishing-house-name.png")
+                        .b-block-magazine__logs
+                            img(src="/www/images/photo-magazine1.jpg")
+                            img(src="/www/images/photo-magazine1.jpg")
+                            img(src="/www/images/photo-magazine1.jpg")
+
+                else if bigWhite
+                    .text-center
+                        .b-block-magazine__together комплект
+
+                        .b-block-magazine__logs--package
+                            img(src="/www/images/photo-magazine1.jpg")
+                            img(src="/www/images/photo-magazine1.jpg")
+                            img(src="/www/images/photo-magazine1.jpg")
+                        figcaption Про здоровье, Про кухню, Аргументы и факты
+                        //.b-description Подписка на 6 месяцев
+                        span.b-price__book
+                            //i.icon-book
+                            span.strike 1220 &#8381;
+                            | 800 &#8381;
+
+                else if magazinePlaceholder
+                    .text-center
+                        .magazine-title Вентиляция. Отпление
+                        img.magazine.placeholder(src="/www/images/Magazine_placeholder.svg")
+                    figcaption Вентиляция. Отпление
+                    .b-description Журнал 1 раз в 6 мес.
+                    .b-price
+                        span.b-price__book
+                            //i.icon-book
+                            | от 1220 &#8381;
+
+                else if newspaperPlaceholder
+                    .text-center
+                        .magazine-title Курганский вестник
+                        img.magazine.placeholder(src="/www/images/Newspaper_placeholder.svg")
+                    figcaption Курганский вестник
+                    .b-description Журнал 1 раз в 6 мес.
+                    .b-price
+                        span.b-price__book
+                            //i.icon-book
+                            | от 1220 &#8381;
+
+                else if electronic
+                    .text-center
+                        img.magazine(src="/www/images/tablet1-big.jpg")
+                    figcaption Хозяйство черноземья
+                    .b-description
+                        div Электронный журнал
+                        div 1 раз в 6 мес.
+                    .b-price
+                        span.b-price__mobile
+                            i.icon-mobile
+                            | от 1220 &#8381;
+                else
+                    .text-center
+                        img.magazine(src="/www/images/photo-magazine1.jpg")
+                    figcaption Forbes
+
+                    if newspaper
+                        .b-description Ежедневная газета
+                    else
+                        .b-description Журнал 1 раз в 6 мес.
+                    .b-price
+                        span.b-price__book
+                            //i.icon-book
+                            | от 1220 &#8381;
+
+mixin block-recently-viewed
+    if popup
+        .text-center
+            a(href="#")
+                figure
+                    img(src="/www/images/photo-magazine3.jpg")
+                    figcaption АвтоМир
+    else
+        a(href="#")
+            figure
+                img(src="/www/images/photo-magazine3.jpg")
+                figcaption АвтоМир
+
+
+
+mixin block-cart
+    .title
+        i.icon-Item_pop_close
+        img(src="/www/images/photo-magazine3.jpg")
+
+mixin dropdown(magazines, title)
+    .row
+        .small-3.columns
+            .b-search__dropdown__magazines= magazines
+        .small-7.columns
+            .b-search__dropdown__title= title
+        .small-2.columns
+            .b-search__dropdown__cover
+                img(src="/www/images/photo-magazine1.jpg")
+

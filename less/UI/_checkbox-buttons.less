@@ -1,0 +1,59 @@
+// checkbox & radiobutton
+//
+//
+
+.checkbox, .radio {
+    cursor: pointer;
+    position: relative;
+    -moz-transition: all 0.75s;
+    -o-transition: all 0.75s;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    height: auto;
+    width: auto;
+    left: -9999px;
+    position: absolute;
+    visibility: hidden;
+}
+
+input[type="checkbox"] + label {
+    cursor: pointer;
+    display: block;
+    margin-top: -4px;
+    margin-bottom: 2.66667rem;
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+        display: inline-block;
+        position: relative;
+        top: 3px;
+        border: 1px solid @input-border-color;
+        border-radius: 3px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        //background: transparent url(/www/images/checkbox-unchecked.svg) no-repeat;
+    }
+}
+
+input[type="checkbox"]:checked + label {
+
+    &::before {
+        background: #0055a6 url(/images/checkbox-checked.svg) no-repeat;
+        border: none;
+    }
+}

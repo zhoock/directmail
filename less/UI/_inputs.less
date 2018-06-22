@@ -1,0 +1,97 @@
+//
+// Inputs
+// --------------------------------------------------
+
+[type="text"],
+[type="tel"],
+[type="password"],
+[type="search"], select {
+    position: relative;
+    border-radius: 0;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: @input-color;
+    border: 1px @input-border-color solid;
+    width: 100%;
+    padding: 7px 9px;
+    margin-bottom: 1.4rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    .transition(all 0.25s);
+
+    &:-moz-placeholder {
+        color: #b6b6b6;
+    }
+
+    &::-moz-placeholder {
+        color: #b6b6b6;
+    }
+
+    &:-ms-input-placeholder {
+        color: #b6b6b6;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #b6b6b6;
+    }
+
+    &:hover {
+        border-color: @input-border-hover;
+    }
+
+    &:focus {
+        border-color: @link;
+    }
+
+    &.error {
+        border-color: @error-color;
+        color: @error-color;
+
+        &:focus {
+            border-color: @error-color;
+        }
+    }
+}
+
+.b-custom-input {
+    margin-bottom: 1.4rem;
+}
+
+textarea {
+    background: white;
+    min-height: 264px;
+    font-size: 2rem;
+    color: @input-color;
+    border: 1px @input-border-color solid;
+    width: 100%;
+    padding: 18px 26px;
+    margin-bottom: 2rem;
+    -webkit-appearance: none;
+    -moz-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+
+    &:-moz-placeholder {
+        color: @input-color
+    }
+    &::-moz-placeholder {
+        color: @input-color
+    }
+    &:-ms-input-placeholder {
+        color: @input-color
+    }
+    &::-webkit-input-placeholder {
+        color: @input-color
+    }
+
+    &:focus {
+        border-color: #3ACEFF;
+    }
+}
+
+
+
+
+

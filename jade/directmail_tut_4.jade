@@ -1,0 +1,57 @@
+extends layout
+
+block head
+	- var title = "directmail_tut_4"
+	include ../includes/_head
+
+block img
+	img(src="/images/directmail_tut4.jpg" alt="" style="left: 0; opacity: 0.5; position: absolute; top: 0; z-index: 9999; display: none;")
+
+append pins
+	// overlay-tut3
+	.b-overlay-tut.b-overlay-tut--3
+	// /overlay-tut3
+
+	.box-popup.b-selection-radius
+		.skip
+			a(href="#") Пропустить обучение
+			i.icon-region_pop_close
+		h2 Выбор радиусом
+		p Кликните мышкой вне дома, и отведите
+			br
+			=" "
+			| курсор немного в сторону — появится
+			br
+			=" "
+			| окружность. Кликните еще раз, чтобы
+			br
+			= " "
+			| выбрать все дома, которые попали
+			br
+			=" "
+			| в окружность
+
+		.btn.btn__primary Дальше
+
+		.prev
+			i.icon-back
+			a(href="#") Выбор группы
+
+		.dots
+			.dot
+				span
+			.dot
+				span
+			.dot
+				span
+			.dot.active
+				span
+			.dot
+				span
+			.dot
+				span
+			.dot
+				span
+		.next
+			a(href="#") Показать все адреса
+			i.icon-More

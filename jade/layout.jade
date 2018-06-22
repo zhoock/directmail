@@ -1,0 +1,94 @@
+//- directmail_help.jade
+
+include ../includes/_mixins
+
+doctype html
+
+html(lang="ru")
+
+	block head
+		include ../includes/_head
+
+	body
+		block img
+			img(src="/images/directmail_tut.jpg" alt="" style="left: 0; opacity: 0.5; position: absolute; top: 0; z-index: 9999; display: none;")
+
+		block content
+			// content
+			main.b-content(role="main")
+				.b-map
+
+				block program-choice
+					// Program-choice
+					.b-program-choice
+
+						block program-choice__address
+							.b-program-choice__address
+								a(href="#").logo: img(src="/images/postal-logo.jpg")
+
+								.delivery Рассылка в
+									=" "
+									a(href="#") Санкт-Петербурге
+
+								.leaflets: a(href="#") Листовки меньше А5
+
+								form
+									.b-address
+										input(type="text", placeholder="Адрес или название")
+										.btn.btn__primary
+											i.icon-Search
+
+						block program-choice__house
+							.b-program-choice__house
+								ul
+									li Выбор домов
+									li: a(href="#") По одному
+									li: a(href="#") В радиусе
+
+						block program-choice__result
+							.b-program-choice__result
+								ul
+									li 3 отделения
+									li 23 дома
+									li 543 квартиры
+									li.price 2475,30 &#8381;
+								.btn.btn__primary.btn--expand Создать заявку
+								div.clean
+									a(href="#") Очистить
+								div.show
+									a(href="#") Показать все адреса
+					// /Program-choice
+
+				block account
+					// Account
+					.b-account
+						.b-account__user
+							a(href="#")
+								span Александр Александровский
+								i.icon-More
+						.b-account__question
+							a(href="#")
+								i.icon-Help
+								span.help Помощь
+							.b-account__question__menu
+								ul
+									li: span Задать вопрос
+									li: span Обучение
+					// /Account
+
+				block pins
+					// Pins
+					.b-pins
+						.pin
+							i.icon-region_pop_close
+						.pin 9
+							i.icon-region_pop_close
+						.pin 999
+							i.icon-region_pop_close
+						.pin
+							i.icon-region_pop_close
+					// /Pins
+
+		// /content
+
+
